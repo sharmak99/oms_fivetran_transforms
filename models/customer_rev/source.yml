@@ -6,12 +6,3 @@ sources:
       - name: sample_1000_records
         identifier: SAMPLE_1000_RECORDS
 
-    tables:
-      - name: customers
-        identifier: customers
-      - name: orders
-        identifier: orders
-      - name: orderitems
-        identifier: orderitems
-      - name: employees
-        identifier: employees
