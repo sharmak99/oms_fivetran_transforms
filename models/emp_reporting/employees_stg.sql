@@ -1,18 +1,10 @@
 -- models/emp_reporting/employees_stg.sql
 
-select
-    employeeid,
-    firstname,
-    lastname,
-    email,
-    jobtitle,
-    hiredate,
-    managerid,
-    address,
+SELECT
+    id,
+    name,    
+    age,
     city,
-    state,
-    zipcode,
-    updated_at,
-    concat(firstname, ' ', lastname) as employeename
-from
-    {{ source('landing', 'employees') }}
+    salary
+FROM
+    {{ source('landing', 'sample_1000_records') }}
