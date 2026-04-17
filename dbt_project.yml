@@ -37,6 +37,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   oms_dbt_proj:
+    +database: GOOGLE_DATABASE
 
     # Customer project
     customer_rev:
