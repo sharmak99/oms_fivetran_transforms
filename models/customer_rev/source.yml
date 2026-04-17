@@ -1,6 +1,6 @@
 sources:
   - name: landing
-    database: OMS_ANALYTICS
+    database: GOOGLE_DATABASE
     schema: LANDING_OMS_CORE
 
     tables:
