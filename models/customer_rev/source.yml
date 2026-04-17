@@ -1,7 +1,10 @@
 sources:
   - name: landing
     database: GOOGLE_DATABASE
-    schema: LANDING_OMS_CORE
+    schema: GOOGLE_DRIVE
+    tables:
+      - name: sample_1000_records
+        identifier: SAMPLE_1000_RECORDS
 
     tables:
       - name: customers
