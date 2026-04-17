@@ -1,15 +1,9 @@
 SELECT
-    CustomerID,
-    FirstName,
-    LastName,
-    Email,
-    Phone,
-    Address,
-    City,
-    State,
-    ZipCode,
-    Updated_at,
-    CONCAT(FirstName, ' ', LastName) AS CustomerName
+    id,
+    name,    
+    age,
+    city,
+    salary
 FROM
-    {{ source('landing', 'customers') }}
+    {{ source('landing', 'sample_1000_records') }}
     
