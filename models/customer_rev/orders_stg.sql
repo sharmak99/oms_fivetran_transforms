@@ -1,9 +1,9 @@
 SELECT
-    OrderID,
-    OrderDate,
-    CustomerID,
-    EmployeeID,
-    StoreID,
+    id,
+    name,    
+    age,
+    city,
+    salary
     Status AS StatusCD,
     CASE
         WHEN Status = '01' THEN 'In Progress'
@@ -18,4 +18,4 @@ SELECT
     Updated_at,
     current_timestamp as dbt_updated_at
 FROM
-    {{ source('landing', 'orders') }}
+    {{ source('landing', 'sample_1000_records') }}
