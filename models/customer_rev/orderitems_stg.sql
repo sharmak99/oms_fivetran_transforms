@@ -1,10 +1,8 @@
 SELECT
-    OrderItemID,
-    OrderID,
-    ProductID,
-    Quantity,
-    UnitPrice,
-    Quantity * UnitPrice AS TotalPrice,
-    Updated_at
+    id,
+    name,    
+    age,
+    city,
+    salary
 FROM
-    {{ source('landing', 'orderitems') }}
+    {{ source('landing', 'sample_1000_records') }}
