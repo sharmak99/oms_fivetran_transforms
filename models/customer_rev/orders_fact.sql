@@ -1,18 +1,11 @@
 {{ config(materialized='table') }}    
 
 SELECT
-    O.OrderID,
-    O.OrderDate,
-    O.CustomerID,
-    O.EmployeeID,
-    O.StoreID,
-    O.StatusCD,
-    O.StatusDesc,
-    COUNT(DISTINCT O.OrderID) AS OrderCount,
-    SUM(OI.TotalPrice) AS Revenue
+    city,
+    salary_band,
+    COUNT(*) AS total_records,
+    AVG(salary) AS avg_salary,
+    max(dbt_updated_at) as last_updated_at
 FROM
-    {{ ref('orders_stg') }} O
-JOIN
-    {{ ref('orderitems_stg') }} OI ON O.OrderID = OI.OrderID
-
-GROUP BY 1,2,3,4,5,6,7
+    {{ ref('orders_stg') }}
+GROUP BY city, salary_band
