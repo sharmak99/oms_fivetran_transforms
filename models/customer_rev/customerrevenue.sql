@@ -1,14 +1,13 @@
 {{ config(materialized='table') }}
 
 SELECT
-    OS.CustomerID,
-    C.CustomerName,
-    SUM(OS.OrderCount) AS OrderCount,
-    SUM(OS.Revenue) AS Revenue
+    city,
+    salary_band,
+    SUM(total_records) AS total_people,
+    ROUND(AVG(salary), 2) AS avg_salary,
+    max(last_updated_at) as last_updated_at
 FROM
-    {{ ref('orders_fact') }} OS
-JOIN
-    {{ ref('customers_stg') }} C ON OS.CustomerID = C.CustomerID
+    {{ ref('orders_fact') }}
 GROUP BY
-    OS.CustomerID,
-    C.CustomerName
+    city,
+    salary_band
